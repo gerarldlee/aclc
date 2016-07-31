@@ -1,0 +1,39 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# editorconfig.org
+
+root = true
+
+[*]
+
+# Change these settings to your own preference
+indent_style = space
+indent_size = 4
+
+# We recommend you to keep these unchanged
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[Makefile]
+indent_style = tab
+
+[*.md]
+trim_trailing_whitespace = false
+
+[{lib/**,Gruntfile}.js]
+indent_style = space
+indent_size = 2
+
+[{package,bower,.yo-rc}.json]
+indent_style = space
+indent_size = 2
+
+[{.travis,docker-*}.yml]
+indent_style = space
+indent_size = 2
+
+[.bowerrc]
+indent_style = space
+indent_size = 2

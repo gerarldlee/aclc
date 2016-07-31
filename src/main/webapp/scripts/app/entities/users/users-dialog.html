@@ -1,0 +1,154 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myUsersLabel">Create or edit a Users</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="users.id" readonly />
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label for="field_user_id">User_id</label>-->
+            <!--<input type="number" class="form-control" name="user_id" id="field_user_id"-->
+                    <!--ng-model="users.user_id"-->
+                    <!--required />-->
+            <!--<div ng-show="editForm.user_id.$invalid">-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.user_id.$error.required">-->
+                    <!--This field is required.-->
+                <!--</p>-->
+                <!--<p class="help-block"-->
+                    <!--ng-show="editForm.user_id.$error.number">-->
+                    <!--This field should be a number.-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="form-group">
+            <label for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="users.name"
+                    required ng-pattern="/^[a-zA-Z ]*$/" />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.pattern" translate-value-pattern="^[a-zA-Z ]*$">
+                    This field should follow pattern "^[a-zA-Z ]*$".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_name">Surname</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                   ng-model="users.surname"
+                   required ng-pattern="/^[a-zA-Z ]*$/" />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.name.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.name.$error.pattern" translate-value-pattern="^[a-zA-Z ]*$">
+                    This field should follow pattern "^[a-zA-Z ]*$".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="users.email"
+                    required ng-pattern="/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/" />
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.email.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.email.$error.pattern" translate-value-pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
+                    This field should follow pattern "^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_password">Password</label>
+            <input type="text" class="form-control" name="password" id="field_password"
+                    ng-model="users.password"
+                     />
+        </div>
+        <div class="form-group">
+            <label for="field_status">Status</label>
+            <select class="form-control" name="status" ng-model="users.status" id="field_status" required>
+                <option value="ALL">ALL</option>
+                <option value="ACTIVE">ACTIVE</option>
+                <option value="INACTIVE">INACTIVE</option>
+            </select>
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_create_by">Create_by</label>
+            <input type="number" class="form-control" name="create_by" id="field_create_by"
+                    ng-model="users.create_by"
+                    required />
+            <div ng-show="editForm.create_by.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.create_by.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.create_by.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_create_date">Create_date</label>
+            <input type="datetime-local" class="form-control" name="create_date" id="field_create_date"
+                    ng-model="users.create_date"
+                    required />
+            <div ng-show="editForm.create_date.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.create_date.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.create_date.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="field_modify_by">Modify_by</label>
+            <input type="number" class="form-control" name="modify_by" id="field_modify_by"
+                    ng-model="users.modify_by"
+                     />
+        </div>
+        <div class="form-group">
+            <label for="field_modify_date">Modify_date</label>
+            <input type="datetime-local" class="form-control" name="modify_date" id="field_modify_date"
+                    ng-model="users.modify_date"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

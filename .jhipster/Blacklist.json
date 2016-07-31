@@ -1,0 +1,21 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "blacklist_id",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "partial_qualified_name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20151106052324",
+    "dto": "no",
+    "pagination": "infinite-scroll"
+}

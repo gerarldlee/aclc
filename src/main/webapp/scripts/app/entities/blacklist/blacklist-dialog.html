@@ -1,0 +1,32 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myBlacklistLabel">Create or edit a Blacklist</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="blacklist_id">ID</label>
+            <input type="text" class="form-control" id="blacklist_id" name="blacklist_id"
+                    ng-model="blacklist.blacklist_id" readonly />
+        </div>
+        <div class="form-group">
+            <label for="field_partial_qualified_name">Partial_qualified_name</label>
+            <input type="text" class="form-control" name="partial_qualified_name" id="field_partial_qualified_name"
+                    ng-model="blacklist.partial_qualified_name"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || editForm.$submitted" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

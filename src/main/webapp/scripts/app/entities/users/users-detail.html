@@ -1,0 +1,94 @@
+
+<div>
+    <h2><span>Users</span> {{users.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>User_id</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{users.user_id}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <tr>
+                <td>
+                    <span>Name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{users.name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Email</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{users.email}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Password</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{users.password}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Status</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'aclcrawlerApp.UserStatus.' + users.status}}">{{users.status}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Create_by</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{users.create_by}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Create_date</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{users.create_date | date:'medium'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Modify_by</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{users.modify_by}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Modify_date</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{users.modify_date | date:'medium'}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

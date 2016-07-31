@@ -1,0 +1,11 @@
+jhipster-dev-postgresql:
+  container_name: aclcrawler-dev-postgresql
+  image: postgres
+  # volumes:
+  # - ~/volumes/jhipster/aclcrawler/dev-postgresql/:/var/lib/postgresql/
+  environment:
+  - POSTGRES_USER=aclcrawler
+  - POSTGRES_PASSWORD=aclcrawler
+  ports:
+  - "5432:5432"
+

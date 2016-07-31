@@ -1,0 +1,98 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "password_history",
+            "otherEntityName": "password_history",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "users"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "user_id",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^([a-zA-Z ]+)$",
+            "fieldValidateRulesPatternJava": "^([a-zA-Z ]+)$"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "surname",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^([a-zA-Z ]+)$",
+            "fieldValidateRulesPatternJava": "^([a-zA-Z ]+)$"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$",
+            "fieldValidateRulesPatternJava": "^([a-zA-Z0-9_\\\\-\\\\.]+)@([a-zA-Z0-9_\\\\-\\\\.]+)\\\\.([a-zA-Z]{2,5})$"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "status",
+            "fieldType": "UserStatus",
+            "fieldValues": "ALL,ACTIVE,INACTIVE",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "create_by",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "create_date",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "modify_by",
+            "fieldType": "Long",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "modify_date",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20151106051848",
+    "dto": "no",
+    "pagination": "infinite-scroll"
+}
